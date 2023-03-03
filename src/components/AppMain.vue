@@ -31,13 +31,15 @@ export default {
         <div class="container">
 
             <ul class="list-cards">
-                <li v-for="card in cardsArray">
+                <li v-for="card in cardsArray" class="card">
                     <img class="card_image" :src="card.card_images[0].image_url" alt="">
-                    <h3 class="card_name">
-                        {{ card.name }}
-                    </h3>
-                    <div class="card_text">
-                        {{ card.archetype }}
+                    <div class="card_description">
+                        <h3 class="card_name">
+                            {{ card.name }}
+                        </h3>
+                        <div class="card_text">
+                            {{ card.archetype }}
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -51,20 +53,39 @@ export default {
 // @use '../style/partials/variables';
 
 .main-content{
-    // background-color: $purple;
+    background-color: purple;
 
     .container{
         padding: 85px;
-    }   
-    .list-cards{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 36px;
+        background-color: white;
 
-        .card_image{
-            height: 275px;
+        .list-cards{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 36px;
+
+            .card{
+                background-color: purple;
+
+                .card_image{
+                    height: 275px;
+                }
+
+                .card_description{
+                    padding: 30px 0;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .card_text{
+                        padding-top: 35px;
+                    }
+                }
+
+            }
         }
-    }
+    }   
 }
 
 
