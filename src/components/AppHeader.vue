@@ -16,7 +16,6 @@ export default {
     <header class="main-header">
 
         <div class="container">
-            <img src="" alt="">
             <h1>
                 {{ title }}
             </h1>
