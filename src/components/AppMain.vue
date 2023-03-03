@@ -50,14 +50,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// @use '../style/partials/variables';
+@use '../style/partials/variables' as *;
 
 .main-content{
-    background-color: purple;
+    background-color: $purple;
 
     .container{
         padding: 85px;
-        background-color: white;
+        background-color: $white;
 
         .list-cards{
             display: grid;
@@ -65,7 +65,7 @@ export default {
             gap: 36px;
 
             .card{
-                background-color: purple;
+                background-color: $purple;
 
                 .card_image{
                     height: 275px;
@@ -74,6 +74,7 @@ export default {
                 .card_description{
                     padding: 30px 0;
                     text-align: center;
+                    color: $white;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
