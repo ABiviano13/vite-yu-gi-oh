@@ -31,9 +31,11 @@ export default {
         <div class="container">
 
             <ul>
-                <li v-for="(card, i) in cardsArray" :key="i">
-                    <img :src="card.card_images.image_url" alt="">
-                    {{ card.name }}
+                <li v-for="card in cardsArray">
+                    <img :src="card.card_images[0].image_url" alt="">
+                    <h3>
+                        {{ card.name }}
+                    </h3>
                     {{ card.archetype }}
                 </li>
             </ul>
