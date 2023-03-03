@@ -4,7 +4,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            cardsArray: ['']
+            cardsArray: []
             
         }
 
@@ -30,13 +30,15 @@ export default {
     <main class="main-content">
         <div class="container">
 
-            <ul>
+            <ul class="list-cards">
                 <li v-for="card in cardsArray">
-                    <img :src="card.card_images[0].image_url" alt="">
-                    <h3>
+                    <img class="card_image" :src="card.card_images[0].image_url" alt="">
+                    <h3 class="card_name">
                         {{ card.name }}
                     </h3>
-                    {{ card.archetype }}
+                    <div class="card_text">
+                        {{ card.archetype }}
+                    </div>
                 </li>
             </ul>
 
@@ -46,5 +48,24 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+// @use '../style/partials/variables';
+
+.main-content{
+    // background-color: $purple;
+
+    .container{
+        padding: 85px;
+    }   
+    .list-cards{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 36px;
+
+        .card_image{
+            height: 275px;
+        }
+    }
+}
+
 
 </style>
