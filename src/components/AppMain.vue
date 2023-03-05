@@ -1,11 +1,14 @@
 <script>
 import axios from 'axios';
-import Card from './Card.vue';
 import store from '../store';
+
+import Card from './Card.vue';
+import ResultCard from './ResultNumberCard.vue';
 
 export default {
     components: {
-        Card
+        Card,
+        ResultCard
     },
     data() {
         return {
@@ -33,6 +36,9 @@ export default {
 <template>
 
     <main class="main-content">
+        <div class="container-result-card">
+            <ResultCard></ResultCard>
+        </div>
         <div class="container">
 
             <ul class="list-cards">
@@ -54,6 +60,12 @@ export default {
 
 .main-content{
     background-color: $purple;
+
+    .container-result-card{
+        background-color: $black;
+        padding: 20px;
+        color: $purple;
+    }
 
     .container{
         padding: 85px;
