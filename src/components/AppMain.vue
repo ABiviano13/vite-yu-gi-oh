@@ -1,7 +1,11 @@
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import Card from './Card.vue';
 
 export default {
+    components: {
+        Card
+    },
     data() {
         return {
             cardsArray: []
@@ -31,17 +35,12 @@ export default {
         <div class="container">
 
             <ul class="list-cards">
-                <li v-for="card in cardsArray" class="card">
-                    <img class="card_image" :src="card.card_images[0].image_url" alt="">
-                    <div class="card_description">
-                        <h3 class="card_name">
-                            {{ card.name }}
-                        </h3>
-                        <div class="card_text">
-                            {{ card.archetype }}
-                        </div>
-                    </div>
-                </li>
+                <Card 
+                v-for="card in cardsArray" 
+                :image="card.card_images[0].image_url"
+                :name="card.name"
+                :text="card.archetype"
+                ></Card>
             </ul>
 
         </div>
@@ -64,27 +63,27 @@ export default {
             grid-template-columns: repeat(5, 1fr);
             gap: 36px;
 
-            .card{
-                background-color: $purple;
+            // .card{
+            //     background-color: $purple;
 
-                .card_image{
-                    height: 275px;
-                }
+            //     .card_image{
+            //         height: 275px;
+            //     }
 
-                .card_description{
-                    padding: 30px 0;
-                    text-align: center;
-                    color: $white;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+            //     .card_description{
+            //         padding: 30px 0;
+            //         text-align: center;
+            //         color: $white;
+            //         display: flex;
+            //         flex-direction: column;
+            //         align-items: center;
 
-                    .card_text{
-                        padding-top: 35px;
-                    }
-                }
+            //         .card_text{
+            //             padding-top: 35px;
+            //         }
+            //     }
 
-            }
+            // }
         }
     }   
 }

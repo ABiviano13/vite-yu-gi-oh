@@ -1,22 +1,17 @@
 <script>
 export default {
-    data() {
-        return{
-            props: {
-                image: {
-                    type: String,
-                    required: true
-                },
-                name: {
-                    type: String,
-                    required: true
-                },
-                text: {
-                    type: String,
-                    required: true
-                }
-            }
-
+    props: {
+        image: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        text: {
+            type: String,
+            required: true
         }
     }
 }
@@ -26,13 +21,13 @@ export default {
 <template>
 
     <li class="card">
-        <img class="card_image" :src="card.card_images[0].image_url" alt="">
+        <img class="card_image" :src="image" alt="">
         <div class="card_description">
             <h3 class="card_name">
-                {{ card.name }}
+                {{ name }}
             </h3>
             <div class="card_text">
-                {{ card.archetype }}
+                {{ text }}
             </div>
         </div>
     </li>
