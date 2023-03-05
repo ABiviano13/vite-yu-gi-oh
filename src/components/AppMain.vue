@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import Card from './Card.vue';
+import store from '../store';
 
 export default {
     components: {
@@ -8,7 +9,7 @@ export default {
     },
     data() {
         return {
-            cardsArray: []
+            store
             
         }
 
@@ -18,7 +19,7 @@ export default {
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
             .then((res) => {
                 console.log(res.data.data)
-                this.cardsArray = res.data.data
+                this.store.cardsArray = res.data.data
             })
         }
     },
@@ -36,7 +37,7 @@ export default {
 
             <ul class="list-cards">
                 <Card 
-                v-for="card in cardsArray" 
+                v-for="card in store.cardsArray" 
                 :image="card.card_images[0].image_url"
                 :name="card.name"
                 :text="card.archetype"
