@@ -62,28 +62,6 @@ export default {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 36px;
-
-            // .card{
-            //     background-color: $purple;
-
-            //     .card_image{
-            //         height: 275px;
-            //     }
-
-            //     .card_description{
-            //         padding: 30px 0;
-            //         text-align: center;
-            //         color: $white;
-            //         display: flex;
-            //         flex-direction: column;
-            //         align-items: center;
-
-            //         .card_text{
-            //             padding-top: 35px;
-            //         }
-            //     }
-
-            // }
         }
     }   
 }
