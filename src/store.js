@@ -2,7 +2,8 @@ import { reactive } from 'vue';
 
 const store = reactive ({
     cardsArray: [],
-    search: ''
+    search: '',
+    selectResult: ''
 });
 
 export default store;

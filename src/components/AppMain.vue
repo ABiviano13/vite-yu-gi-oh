@@ -6,12 +6,14 @@ import Card from './Card.vue';
 import ResultCard from './ResultNumberCard.vue';
 
 import Filters from './Filters.vue';
+import Select from './Select.vue';
 
 export default {
     components: {
         Card,
         ResultCard,
-        Filters
+        Filters,
+        // Select
     },
     data() {
         return {
@@ -23,6 +25,7 @@ export default {
     methods: {
         fechCards() {
             const search = this.store.search
+            const selectResult = this.store.selectResult
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
                 params: {
                     num: 20,
@@ -31,7 +34,7 @@ export default {
                 }
             })
             .then((res) => {
-                console.log(res.data.data)
+                // console.log(res.data.data)
                 this.store.cardsArray = res.data.data
             })
         },
@@ -51,6 +54,7 @@ export default {
     <main class="main-content">
         <div class="container-result-filters">
             <ResultCard></ResultCard>
+            <!-- <Select @onChangeOption="onSearchFn()"></Select> -->
             <Filters @onEnter="onSearchFn()"></Filters>
         </div>
         <div class="container">
