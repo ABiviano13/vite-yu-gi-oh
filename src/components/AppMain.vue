@@ -22,11 +22,21 @@ export default {
     },
     methods: {
         fechCards() {
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+            const search = this.store.search
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+                params: {
+                    num: 20,
+                    offset: 0,
+                    fname: search
+                }
+            })
             .then((res) => {
                 console.log(res.data.data)
                 this.store.cardsArray = res.data.data
             })
+        },
+        onSearchFn() {
+            this.fechCards()
         }
     },
     created() {
@@ -41,7 +51,7 @@ export default {
     <main class="main-content">
         <div class="container-result-filters">
             <ResultCard></ResultCard>
-            <Filters></Filters>
+            <Filters @onEnter="onSearchFn()"></Filters>
         </div>
         <div class="container">
 
