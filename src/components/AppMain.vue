@@ -5,10 +5,13 @@ import store from '../store';
 import Card from './Card.vue';
 import ResultCard from './ResultNumberCard.vue';
 
+import Filters from './Filters.vue';
+
 export default {
     components: {
         Card,
-        ResultCard
+        ResultCard,
+        Filters
     },
     data() {
         return {
@@ -36,8 +39,9 @@ export default {
 <template>
 
     <main class="main-content">
-        <div class="container-result-card">
+        <div class="container-result-filters">
             <ResultCard></ResultCard>
+            <Filters></Filters>
         </div>
         <div class="container">
 
@@ -61,10 +65,13 @@ export default {
 .main-content{
     background-color: $purple;
 
-    .container-result-card{
+    .container-result-filters{
         background-color: $black;
         padding: 20px;
-        color: $purple;
+        color: $white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .container{
