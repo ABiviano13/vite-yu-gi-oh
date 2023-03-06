@@ -1,8 +1,11 @@
 <script>
+import store from '../store';
+
 export default {
     data() {
         return {
-            search: ''
+            search: '',
+            store
         }
     }
 }
@@ -13,7 +16,7 @@ export default {
 
     <input 
     type="text" 
-    v-model="search"
+    v-model="store.search"
     placeholder="Filtra per nome"
     >
 
