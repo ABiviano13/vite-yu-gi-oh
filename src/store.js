@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 const store = reactive ({
     cardsArray: [],
     search: '',
-    selectResult: ''
+    selectResult: 10
 });
 
 export default store;

@@ -13,7 +13,7 @@ export default {
         Card,
         ResultCard,
         Filters,
-        // Select
+        Select
     },
     data() {
         return {
@@ -28,7 +28,7 @@ export default {
             const selectResult = this.store.selectResult
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
                 params: {
-                    num: 20,
+                    num: selectResult,
                     offset: 0,
                     fname: search
                 }
@@ -54,7 +54,7 @@ export default {
     <main class="main-content">
         <div class="container-result-filters">
             <ResultCard></ResultCard>
-            <!-- <Select @onChangeOption="onSearchFn()"></Select> -->
+            <Select @onChangeOption="onSearchFn()"></Select>
             <Filters @onEnter="onSearchFn()"></Filters>
         </div>
         <div class="container">
