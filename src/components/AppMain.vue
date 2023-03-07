@@ -22,10 +22,19 @@ export default {
         }
 
     },
+    computed: {
+        search() {
+            return this.store.search
+        },
+        selectResult () {
+            return this.store.selectResult
+        }
+
+    },
     methods: {
         fechCards() {
-            const search = this.store.search
-            const selectResult = this.store.selectResult
+            const search = this.search
+            const selectResult = this.selectResult
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
                 params: {
                     num: selectResult,
